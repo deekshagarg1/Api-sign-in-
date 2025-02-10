@@ -1,0 +1,21 @@
+//signin code
+
+const navigate =useNavigate()
+
+  // const navigate = useNavigate();
+
+ 
+
+    const collectData= async()=>{ console.warn(name,email,password)
+    let result= await fetch("http://localhost:5000/register" ,{
+      method:"post",
+      body:JSON.stringify({name,email,password}),
+      headers:{"content-type":"application/json"}
+      
+    })
+    result = await result.json()
+     console.log(result);
+     localStorage.setItem("user", JSON.stringify(result))
+     navigate("/")
+
+  }
